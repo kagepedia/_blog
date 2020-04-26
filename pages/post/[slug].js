@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 import Head from '../../components/head';
 import Nav from '../../components/nav';
-import Post from '../../components/post'
+import PostDetail from '../../components/postdetail'
 
 const client = require('contentful').createClient({
   space: process.env.CTF_SPACE_ID,
@@ -9,8 +10,14 @@ const client = require('contentful').createClient({
 })
 
 export default () => {
+  const router = useRouter()
+  const { slug } = router.query
+  
   async function fetchEntries() {
-    const entries = await client.getEntries()
+    const entries = await client.getEntries({
+        'content_type': process.env.CTF_BLOG_POST_TYPE_ID,
+        'fields.slug': slug,
+    })
     if (entries.items) return entries.items
     console.log(`Error getting Entries for ${contentType.name}.`)
   }
@@ -30,13 +37,14 @@ export default () => {
       <Head title="Home" />
       <Nav />
       <div className="hero">
-        <h1 className="title">Welcome to Post Pages</h1>
+        <h1 className="title">Welcome to Post Detail Pages</h1>
         {posts.length > 0
           ? posts.map(p => (
-              <Post
+              <PostDetail
                 title={p.fields.title}
                 publishDate={p.fields.publishDate}
-                slug={p.fields.slug}
+                discription={p.fields.discription}
+                body={p.fields.body}
                 key={p.fields.slug}
               />
             ))

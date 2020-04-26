@@ -1,24 +1,16 @@
-import Link from 'next/link';
-const Post = ({ title, publishDate, slug }) => (
+const Post = ({ title, publishDate, discription, body }) => (
     <div className="container">
-      <Link href="/post/[slug]" as={`/post/${slug}`}>
         <div className="text">
           <h2>{title}</h2>
           <h4>{publishDate}</h4>
+          <p>{discription}</p><br />
+          <p>{body}</p>
         </div>
-      </Link>
 
     <style jsx>{`
     .container {
-      cursor: pointer;
       height: 453px;
       margin-bottom: 10px;
-    }
-    a {
-      border-bottom: none;
-    }
-    a:hover {
-      border-bottom: none;
     }
     .text {
       margin-top: -160px;
