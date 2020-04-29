@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import Head from '../../components/head';
 import Nav from '../../components/nav';
@@ -9,25 +8,29 @@ const client = require('contentful').createClient({
   accessToken: process.env.CTF_CDA_ACCESS_TOKEN
 })
 
-export default () => {
+// functions
+export async function getStaticPaths() {
+  const entries = await client.getEntries()  
+  const paths = entries.items.map(post => `/post/${post.fields.slug}`)
+  return { paths, fallback: false }
+}
+
+export async function getStaticProps({ params }) {
+  const slug = params.slug
+  const entries = await client.getEntries({
+    'content_type': process.env.CTF_BLOG_POST_TYPE_ID,
+    'fields.slug': slug,
+  })
+  const post = entries.items[0]
+  return { props: { post } }
+}
+
+// render
+function Detail({ post }) {
   const router = useRouter()
-  const { slug } = router.query
-  
-  async function fetchEntries() {
-    const entries = await client.getEntries({
-        'content_type': process.env.CTF_BLOG_POST_TYPE_ID,
-        'fields.slug': slug,
-    })
-    if (entries.items) return entries.items
-    console.log(`Error getting Entries for ${contentType.name}.`)
+  if(router.isFallback){
+    return <div>Loading...</div>
   }
-
-  const [post, setPost] = useState(null)
-
-  useEffect(() => {
-    fetchEntries().then(item => setPost(item[0]))
-  }, [])
-  
   return (
     <div>
       <Head title="Home" />
@@ -65,3 +68,5 @@ export default () => {
     </div>
   );
 }
+
+export default Detail
