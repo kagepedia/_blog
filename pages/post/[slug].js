@@ -22,32 +22,26 @@ export default () => {
     console.log(`Error getting Entries for ${contentType.name}.`)
   }
 
-  const [posts, setPosts] = useState([])
+  const [post, setPost] = useState(null)
 
   useEffect(() => {
-    async function getPosts() {
-      const allPosts = await fetchEntries()
-      setPosts([...allPosts])
-    }
-    getPosts()
+    fetchEntries().then(item => setPost(item[0]))
   }, [])
-
+  
   return (
     <div>
       <Head title="Home" />
       <Nav />
       <div className="hero">
         <h1 className="title">Welcome to Post Detail Pages</h1>
-        {posts.length > 0
-          ? posts.map(p => (
-              <PostDetail
-                title={p.fields.title}
-                publishDate={p.fields.publishDate}
-                discription={p.fields.discription}
-                body={p.fields.body}
-                key={p.fields.slug}
-              />
-            ))
+        {post ?
+          <PostDetail
+            title={post.fields.title}
+            publishDate={post.fields.publishDate}
+            discription={post.fields.discription}
+            body={post.fields.body}
+            key={post.fields.slug}
+            />
           : null}
       </div>
 
