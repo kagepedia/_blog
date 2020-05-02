@@ -1,6 +1,8 @@
 const md = require('markdown-it')({
+  breaks: true,
   html: true,
-  lineNumbers: true
+  linkify: true,
+  typography: true,
 })
 .use(require('markdown-it-highlightjs'))
 .use(require('markdown-it-katex'))
