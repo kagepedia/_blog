@@ -3250,6 +3250,31 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
+markdown-it-abbr@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/markdown-it-abbr/-/markdown-it-abbr-1.0.4.tgz#d66b5364521cbb3dd8aa59dadfba2fb6865c8fd8"
+  integrity sha1-1mtTZFIcuz3Yqlna37ovtoZcj9g=
+
+markdown-it-container@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/markdown-it-container/-/markdown-it-container-3.0.0.tgz#1d19b06040a020f9a827577bb7dbf67aa5de9a5b"
+  integrity sha512-y6oKTq4BB9OQuY/KLfk/O3ysFhB3IMYoIWhGJEidXt1NQFocFK2sA2t0NYZAMyMShAGL6x5OPIbrmXPIqaN9rw==
+
+markdown-it-deflist@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/markdown-it-deflist/-/markdown-it-deflist-2.0.3.tgz#5727db04184d3cb2bc6ee4a9641e3a1091d5fd6f"
+  integrity sha512-/BNZ8ksW42bflm1qQLnRI09oqU2847Z7MVavrR0MORyKLtiUYOMpwtlAfMSZAQU9UCvaUZMpgVAqoS3vpToJxw==
+
+markdown-it-emoji@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/markdown-it-emoji/-/markdown-it-emoji-1.4.0.tgz#9bee0e9a990a963ba96df6980c4fddb05dfb4dcc"
+  integrity sha1-m+4OmpkKljupbfaYDE/dsF37Tcw=
+
+markdown-it-footnote@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/markdown-it-footnote/-/markdown-it-footnote-3.0.2.tgz#1575ee7a093648d4e096aa33386b058d92ac8bc1"
+  integrity sha512-JVW6fCmZWjvMdDQSbOT3nnOQtd9iAXmw7hTSh26+v42BnvXeVyGMDBm5b/EZocMed2MbCAHiTX632vY0FyGB8A==
+
 markdown-it-highlightjs@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/markdown-it-highlightjs/-/markdown-it-highlightjs-3.1.0.tgz#1f4083270637bbecde26babbc9b7f333306e3010"
@@ -3258,12 +3283,32 @@ markdown-it-highlightjs@^3.1.0:
     highlight.js "^9.18.1"
     lodash.flow "^3.5.0"
 
+markdown-it-ins@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/markdown-it-ins/-/markdown-it-ins-3.0.0.tgz#b1b56824c78dc66e52b0fc97531b317cd78d79d2"
+  integrity sha512-+vyAdBuMGwmT2yMlAFJSx2VR/0QZ1onQ/Mkkmr4l9tDFOh5sVoAgRbkgbuSsk+sxJ9vaMH/IQ323ydfvQrPO/Q==
+
 markdown-it-katex@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/markdown-it-katex/-/markdown-it-katex-2.0.3.tgz#d7b86a1aea0b9d6496fab4e7919a18fdef589c39"
   integrity sha1-17hqGuoLnWSW+rTnkZoY/e9YnDk=
   dependencies:
     katex "^0.6.0"
+
+markdown-it-mark@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/markdown-it-mark/-/markdown-it-mark-3.0.0.tgz#27c3e39ef3cc310b2dde5375082c9fa912983cda"
+  integrity sha512-HqMWeKfMMOu4zBO0emmxsoMWmbf2cPKZY1wP6FsTbKmicFfp5y4L3KXAsNeO1rM6NTJVOrNlLKMPjWzriBGspw==
+
+markdown-it-sub@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/markdown-it-sub/-/markdown-it-sub-1.0.0.tgz#375fd6026eae7ddcb012497f6411195ea1e3afe8"
+  integrity sha1-N1/WAm6ufdywEkl/ZBEZXqHjr+g=
+
+markdown-it-sup@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/markdown-it-sup/-/markdown-it-sup-1.0.0.tgz#cb9c9ff91a5255ac08f3fd3d63286e15df0a1fc3"
+  integrity sha1-y5yf+RpSVawI8/09YyhuFd8KH8M=
 
 markdown-it@^10.0.0:
   version "10.0.0"
