@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import Head from '../../components/head';
 import Nav from '../../components/nav';
 import PostDetail from '../../components/postdetail'
-import '../../styles/post.scss'
+import '../../styles/post/post.scss'
 
 const client = require('contentful').createClient({
   space: process.env.CTF_SPACE_ID,
