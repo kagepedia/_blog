@@ -22,36 +22,13 @@ const md = require('markdown-it')({
 // markdown-it-plugin
 
 const Post = ({ title, publishDate, discription, body }) => (
-    <div className="container">
-        <div className="text">
-          <h2>{title}</h2>
-          <h4>{publishDate}</h4>
-          <p>{discription}</p><br />
-          <div dangerouslySetInnerHTML={{__html: md.render(body)}} />
-        </div>
-
-    <style jsx>{`
-    .container {
-      height: 453px;
-      margin-bottom: 10px;
-    }
-    .text {
-      margin-top: -160px;
-      padding: 24px;
-      position: absolute;
-    }
-    h2 {
-      color: red;
-      font-size: 24px;
-      margin-bottom: 0;
-    }
-    h4 {
-      color: red;
-      font-size: 16px;
-      font-weight: 500;
-      margin-top: 8px;
-    }
-    `}</style>
+  <div className="wrapper">
+    <div className="ctf">
+      <h2 className="title">{title}</h2>
+      <h4 className="date">{publishDate}</h4>
+      <p  className="description">{discription}</p><br />
+      <div className="article" dangerouslySetInnerHTML={{__html: md.render(body)}} />
+    </div>
   </div>
 );
 

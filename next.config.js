@@ -1,5 +1,8 @@
 require('dotenv').config()
-module.exports = {
+const withSass = require('@zeit/next-sass')
+
+module.exports = withSass({
+  // cssModules: true,
   webpack: (config) => {
     config.node = {
       fs: 'empty'
@@ -11,4 +14,4 @@ module.exports = {
     CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN,
     CTF_BLOG_POST_TYPE_ID: process.env.CTF_BLOG_POST_TYPE_ID
   }
-};
+});
