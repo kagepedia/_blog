@@ -1,6 +1,6 @@
 // markdown-it-plugin
 const md = require('markdown-it')({
-  breaks: true,
+  // breaks: true,
   html: true,
   linkify: true,
   typography: true,
@@ -22,14 +22,12 @@ const md = require('markdown-it')({
 // markdown-it-plugin
 
 const Post = ({ title, publishDate, discription, body }) => (
-  <div className="wrapper">
     <div className="ctf">
       <h2 className="title">{title}</h2>
       <h4 className="date">{publishDate}</h4>
       <p  className="description">{discription}</p><br />
       <div className="article" dangerouslySetInnerHTML={{__html: md.render(body)}} />
     </div>
-  </div>
 );
 
 export default Post;
