@@ -1,12 +1,5 @@
 import Link from 'next/link';
 
-const links = [
-  { href: 'https://github.com/themodernjavascript/create-next-app-cli', label: 'Github' }
-].map(link => {
-  link.key = `nav-link-${link.href}-${link.label}`
-  return link
-});
-
 const Nav = () => (
   <nav>
     <ul>
@@ -15,17 +8,21 @@ const Nav = () => (
           <a>Home</a>
         </Link>
       </li>
-      <ul>
-        {links.map(
-          ({ key, href, label }) => (
-            <li key={key}>
-              <Link href={href}>
-                <a>{label}</a>
-              </Link>
-            </li>
-          )
-        )}
-      </ul>
+      <li>
+        <Link prefetch href="/post">
+          <a>Post</a>
+        </Link>
+      </li>
+      <li>
+        <Link prefetch href="/about">
+          <a>About</a>
+        </Link>
+      </li>
+      <li>
+        <Link prefetch href="/contact">
+          <a>Contact</a>
+        </Link>
+      </li>
     </ul>
 
     <style jsx>{`
