@@ -3,7 +3,7 @@ import Nav from '../../components/nav';
 
 export default () => (
   <div>
-    <Head title="Home" />
+    <Head title="このブログについて｜kagepediaのエンジニアブログ" />
     <Nav />
     <div className="hero">
       <h1 className="title">Welcome to About Page</h1>
