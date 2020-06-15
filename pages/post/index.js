@@ -27,7 +27,7 @@ export default () => {
 
   return (
     <div>
-      <Head title="Home" />
+      <Head title="記事一覧｜kagepediaのエンジニアブログ" />
       <Nav />
       <div className="hero">
         <h1 className="title">Welcome to Post Pages</h1>

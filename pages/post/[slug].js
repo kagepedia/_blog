@@ -34,7 +34,7 @@ function Detail({ post }) {
   }
   return (
     <div>
-      <Head title="Home" />
+      <Head title={post.fields.title + "｜kagepediaのエンジニアブログ"} />
       <Nav />
       <div className="text">
         <h1 className="top-title">Welcome to Post Detail Pages</h1>
