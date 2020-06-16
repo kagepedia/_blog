@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import Head from '../../components/head';
 import Nav from '../../components/nav';
 import PostDetail from '../../components/postdetail'
-import '../../styles/post/post.scss'
+import '../../styles/post/postdetail.scss'
 
 const client = require('contentful').createClient({
   space: process.env.CTF_SPACE_ID,
@@ -40,6 +40,8 @@ function Detail({ post }) {
         <h1 className="top-title">Welcome to Post Detail Pages</h1>
         {post ?
           <PostDetail
+            img_url={post.fields.image.fields.file.url}
+            img_alt={post.fields.image.fields.title}
             title={post.fields.title}
             publishDate={post.fields.publishDate}
             discription={post.fields.discription}

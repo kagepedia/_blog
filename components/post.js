@@ -1,13 +1,16 @@
 import Link from 'next/link';
-const Post = ({ title, publishDate, slug }) => (
+const Post = ({ img_url, img_alt, title, publishDate, slug }) => (
+  <Link href="/post/[slug]" as={`/post/${slug}`}>
     <div className="container">
-      <Link href="/post/[slug]" as={`/post/${slug}`}>
-        <div className="text">
-          <h2>{title}</h2>
-          <h4>{publishDate}</h4>
-        </div>
-      </Link>
-  </div>
+      <div className="thumbnail">
+        <img src={img_url} alt={img_alt} />
+      </div>
+      <div className="text">
+        <h2>{title}</h2>
+        <h4>{publishDate}</h4>
+      </div>
+    </div>
+  </Link>
 );
 
 export default Post;

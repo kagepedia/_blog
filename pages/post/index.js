@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Head from '../../components/head';
 import Nav from '../../components/nav';
 import Post from '../../components/post'
+import '../../styles/post/post.scss'
 
 const client = require('contentful').createClient({
   space: process.env.CTF_SPACE_ID,
@@ -34,6 +35,8 @@ export default () => {
         {posts.length > 0
           ? posts.map(p => (
               <Post
+                img_url={p.fields.image.fields.file.url}
+                img_alt={p.fields.image.fields.title}
                 title={p.fields.title}
                 publishDate={p.fields.publishDate}
                 slug={p.fields.slug}

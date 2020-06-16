@@ -21,8 +21,9 @@ const md = require('markdown-it')({
 .use(require('markdown-it-katex'))
 // markdown-it-plugin
 
-const Post = ({ title, publishDate, discription, body }) => (
+const Post = ({ img_url, img_alt, title, publishDate, discription, body }) => (
     <div className="ctf">
+      <div className="thumbnail"><img src={img_url} alt={img_alt} /></div>
       <h2 className="title">{title}</h2>
       <h4 className="date">{publishDate}</h4>
       <p  className="description">{discription}</p><br />
