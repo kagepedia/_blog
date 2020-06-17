@@ -3,6 +3,8 @@ import Head from '../../components/head';
 import Nav from '../../components/nav';
 import Post from '../../components/post'
 import '../../styles/post/post.scss'
+import { formatDate } from '../../utils/date'
+import { noImage } from '../../utils/image'
 
 const client = require('contentful').createClient({
   space: process.env.CTF_SPACE_ID,
@@ -35,10 +37,10 @@ export default () => {
         {posts.length > 0
           ? posts.map(p => (
               <Post
-                img_url={p.fields.image.fields.file.url}
-                img_alt={p.fields.image.fields.title}
+                img_url={noImage(p).url}
+                img_alt={noImage(p).title}
                 title={p.fields.title}
-                publishDate={p.fields.publishDate}
+                publishDate={formatDate(p.fields.publishDate)}
                 slug={p.fields.slug}
                 key={p.fields.slug}
               />
