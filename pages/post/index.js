@@ -41,6 +41,7 @@ export default () => {
                 img_alt={noImage(p).title}
                 title={p.fields.title}
                 publishDate={formatDate(p.fields.publishDate)}
+                discription={p.fields.discription}
                 slug={p.fields.slug}
                 key={p.fields.slug}
               />

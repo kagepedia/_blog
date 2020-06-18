@@ -13,8 +13,16 @@
         }
         .thumbnail {
             img {
+                float: left;
                 width: 200px;
-                height: 80%;
+                height: auto;
+            }
+        }
+        .text {
+            text-align: center;
+            .explain {
+                white-space: pre;
+                color: #808080;
             }
         }
     }
