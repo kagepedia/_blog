@@ -1,0 +1,14 @@
+section {
+    text-align: center;
+    .profile--basic {
+        img {
+            border-radius: 50%;
+            border: 3px solid green;
+        }
+    }
+    .profile--skills {
+        ul {
+            list-style: none;
+        }
+    }
+}
