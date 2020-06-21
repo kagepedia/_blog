@@ -11,10 +11,12 @@ const Profile = () => (
         </div>
         <div className="profile--skills">
             <h2>Skills</h2>
-            <ul>
+            <ul className="wrapper list">
                 <li>
-                    <span></span>
-                    <p>Javascript</p>
+                    <div className="pie start-0 end-25"></div>
+                    <div className="pie big start-25 end-75"></div>
+                    <div className="pie over"><span>25%</span></div>
+                    <div className="pie language">Javascript</div>
                 </li>
             </ul>
         </div>
