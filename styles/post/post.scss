@@ -3,23 +3,25 @@
     .title {
         text-align: center;
     }
+    a {
+        text-decoration: none;
+        color: #000000;
+    }
     .container {
-        text-align: center;
         border: solid 2px #000000;
         margin-bottom: 15px;
         cursor: pointer;
+        height: auto;
+        display: flex;
         &:hover {
             background-color: #d3d3d3;
         }
         .thumbnail {
-            img {
-                float: left;
-                width: 200px;
-                height: auto;
-            }
+            width: 30%;
+            height: auto;
+            object-fit: cover;
         }
         .text {
-            text-align: center;
             .explain {
                 white-space: pre;
                 color: #808080;
