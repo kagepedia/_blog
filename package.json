@@ -12,8 +12,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@material-ui/core": "^4.10.2",
+    "@material-ui/icons": "^4.9.1",
     "@zeit/next-sass": "^1.0.1",
     "contentful": "^7.14.3",
+    "dayjs": "^1.8.28",
     "dotenv": "^8.2.0",
     "markdown-it": "^10.0.0",
     "markdown-it-abbr": "^1.0.4",

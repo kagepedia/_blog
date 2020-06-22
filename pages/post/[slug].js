@@ -2,7 +2,9 @@ import { useRouter } from 'next/router'
 import Head from '../../components/head';
 import Nav from '../../components/nav';
 import PostDetail from '../../components/postdetail'
-import '../../styles/post/post.scss'
+import '../../styles/post/postdetail.scss'
+import { formatDate } from '../../utils/date'
+import { noImage } from '../../utils/image'
 
 const client = require('contentful').createClient({
   space: process.env.CTF_SPACE_ID,
@@ -34,14 +36,16 @@ function Detail({ post }) {
   }
   return (
     <div>
-      <Head title="Home" />
+      <Head title={post.fields.title + "｜kagepediaのエンジニアブログ"} />
       <Nav />
       <div className="text">
         <h1 className="top-title">Welcome to Post Detail Pages</h1>
         {post ?
           <PostDetail
+            img_url={noImage(post).url}
+            img_alt={noImage(post).title}
             title={post.fields.title}
-            publishDate={post.fields.publishDate}
+            publishDate={formatDate(post.fields.publishDate)}
             discription={post.fields.discription}
             body={post.fields.body}
             key={post.fields.slug}

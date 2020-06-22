@@ -1,10 +1,10 @@
 import NextHead from 'next/head';
 import { string } from 'prop-types';
 
-const defaultDescription = '';
-const defaultKeywords = '';
-const defaultOGURL = '';
-const defaultOGImage = '';
+const defaultDescription = '新しい知見や開発においてつまづいた事などを主に発信していくサイトです。';
+const defaultKeywords = 'ウェブ開発,エンジニアブログ,テックブログ';
+const defaultOGURL = 'https://blog.kagepedia.vercel.app';
+const defaultOGImage = '/static/ogimage.png';
 
 const Head = (props) => (
   <NextHead>
