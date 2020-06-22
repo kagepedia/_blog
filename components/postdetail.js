@@ -21,6 +21,7 @@ const md = require('markdown-it')({
 .use(require('markdown-it-katex'))
 // markdown-it-plugin
 
+// Icon
 import ScheduleOutlinedIcon from '@material-ui/icons/ScheduleOutlined';
 
 
