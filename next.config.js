@@ -8,7 +8,8 @@ module.exports = withSass({
       fs: 'empty'
     },
     config.module.rules.push({
-      test: /\.(png|jpg|gif|svg)$/,
+      test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+      // test: /\.(png|jpg|gif|svg)$/,
       use: {
         loader: 'url-loader',
         options: {
