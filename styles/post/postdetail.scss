@@ -1,6 +1,5 @@
 .top-title {
     text-align: center;
-    color: pink;
 }
 
 /* contentful style */
@@ -9,15 +8,16 @@
         text-align: center;
     }
     .title {
-        color: blue;
         text-align: center;
+    }
+    .calender {
+        margin: 0 0 0 47%;
+        float: left;
     }
     .date {
-        color: pink;
-        text-align: center;
+        margin-left: 48.5%;
     }
     .description {
-        color: green;
         text-align: center;
     }
     /* markdown */

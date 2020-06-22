@@ -22,7 +22,20 @@
             object-fit: cover;
         }
         .text {
+            width: 100%;
+            height: auto;
+            .calender {
+                float: left;
+                margin-left: 4px;
+            }
+            .date {
+                margin: 2px 10px 0px 35px;
+            }
+            .ttl {
+                margin: 10px 0 0 10px;
+            }
             .explain {
+                margin: 10px 0 0 10px;
                 white-space: pre;
                 color: #808080;
             }
