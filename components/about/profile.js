@@ -1,5 +1,5 @@
 const Profile = () => (
-    <section>
+    <section className="profile">
         <div className="profile--basic">
             <h2>Profile</h2>
             <img src="/static/profile.JPG" alt="プロフィール画像" />
