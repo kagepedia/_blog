@@ -1,20 +1,65 @@
 import Link from 'next/link';
+import styled from 'styled-components';
 import ScheduleOutlinedIcon from '@material-ui/icons/ScheduleOutlined';
 
 const Post = ({ img_url, img_alt, title, publishDate, discription, slug }) => (
-  <Link href="/post/[slug]" as={`/post/${slug}`}>
-    <a>
-    <div className="container">
-      <img className="thumbnail" src={img_url} alt={img_alt} />
-      <div className="text">
-        <ScheduleOutlinedIcon className="calender" fontSize="default"/>
-        <h4 className="date">{publishDate}</h4>
-        <h2 className="ttl">{title}</h2>
-        <p className="explain">{discription}</p>
-      </div>
-    </div>
-    </a>
-  </Link>
+  <StyledLink href={"/post/" + slug}>
+    <Wrapper>
+      <ThumbnailImage src={img_url} alt={img_alt} />
+      <PostDetail>
+        <CalenderIcon><ScheduleOutlinedIcon className="calender" fontSize="default"/></CalenderIcon>
+        <Date>{publishDate}</Date>
+        <Title>{title}</Title>
+        <Discription>{discription}</Discription>
+      </PostDetail>
+    </Wrapper>
+  </StyledLink>
 );
+
+const StyledLink = styled.a`
+  text-decoration: none;
+  color: #000000;
+`;
+
+const Wrapper = styled.div`
+  border: solid 2px #000000;
+  margin-bottom: 15px;
+  cursor: pointer;
+  height: auto;
+  display: flex;
+  :hover {
+    background-color: #d3d3d3;
+  }
+`;
+
+const PostDetail = styled.div`
+  width: 100%;
+  height: auto;
+`;
+
+const ThumbnailImage = styled.img`
+  width: 30%;
+  height: auto;
+  object-fit: cover;
+`;
+
+const CalenderIcon = styled.div`
+  float: left;
+  margin-left: 4px;
+`;
+
+const Date = styled.h4`
+  margin: 2px 10px 0px 35px;
+`;
+
+const Title = styled.h2`
+  margin: 10px 0 0 10px;
+`;
+
+const Discription = styled.p`
+  margin: 10px 0 0 10px;
+  white-space: pre;
+  color: #808080;
+`;
 
 export default Post;

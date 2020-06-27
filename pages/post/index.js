@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
+import styled from 'styled-components';
 import Head from '../../components/head';
 import Nav from '../../components/nav';
 import Post from '../../components/post'
-import '../../styles/post/post.scss'
 import { formatDate } from '../../utils/date'
 import { noImage } from '../../utils/image'
 
@@ -28,12 +28,21 @@ export default () => {
     getPosts()
   }, [])
 
+  // style
+  const Wrapper = styled.div`
+    margin: 2% 24%;
+  `;
+
+  const Title = styled.h1`
+    text-align: center;
+  `;
+
   return (
     <div>
       <Head title="記事一覧｜kagepediaのエンジニアブログ" />
       <Nav />
-      <div className="hero">
-        <h1 className="title">Welcome to Post Pages</h1>
+      <Wrapper>
+        <Title>Post</Title>
         {posts.length > 0
           ? posts.map(p => (
               <Post
@@ -47,7 +56,7 @@ export default () => {
               />
             ))
           : null}
-      </div>
+      </Wrapper>
     </div>
   );
 }

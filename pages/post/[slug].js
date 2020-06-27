@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router'
+import styled from 'styled-components';
 import Head from '../../components/head';
 import Nav from '../../components/nav';
 import PostDetail from '../../components/postdetail'
-import '../../styles/post/postdetail.scss'
 import { formatDate } from '../../utils/date'
 import { noImage } from '../../utils/image'
 
@@ -13,7 +13,7 @@ const client = require('contentful').createClient({
 
 // functions
 export async function getStaticPaths() {
-  const entries = await client.getEntries()  
+  const entries = await client.getEntries()
   const paths = entries.items.map(post => `/post/${post.fields.slug}`)
   return { paths, fallback: false }
 }
@@ -39,7 +39,7 @@ function Detail({ post }) {
       <Head title={post.fields.title + "｜kagepediaのエンジニアブログ"} />
       <Nav />
       <div className="text">
-        <h1 className="top-title">Welcome to Post Detail Pages</h1>
+        <Title>Post</Title>
         {post ?
           <PostDetail
             img_url={noImage(post).url}
@@ -55,5 +55,9 @@ function Detail({ post }) {
     </div>
   );
 }
+
+const Title = styled.h1`
+  text-align: center;
+`;
 
 export default Detail
