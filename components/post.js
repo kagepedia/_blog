@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styled from 'styled-components';
+import { media } from '../utils/style'
 import ScheduleOutlinedIcon from '@material-ui/icons/ScheduleOutlined';
 
 const Post = ({ img_url, img_alt, title, publishDate, discription, slug }) => (
@@ -30,6 +31,15 @@ const Wrapper = styled.div`
   :hover {
     background-color: #d3d3d3;
   }
+  ${media.desktop`
+    color: red;
+  `}
+  ${media.tablet`
+    color: blue;
+  `}
+  ${media.phone`
+    color: green;
+  `}
 `;
 
 const PostDetail = styled.div`
@@ -58,7 +68,7 @@ const Title = styled.h2`
 
 const Discription = styled.p`
   margin: 10px 0 0 10px;
-  white-space: pre;
+  white-space:pre-wrap;
   color: #808080;
 `;
 

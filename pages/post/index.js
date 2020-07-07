@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Head from '../../components/head';
 import Nav from '../../components/nav';
 import Post from '../../components/post'
+import { media } from '../../utils/style'
 import { formatDate } from '../../utils/date'
 import { noImage } from '../../utils/image'
 
@@ -40,7 +41,7 @@ export default () => {
   return (
     <div>
       <Head title="記事一覧｜kagepediaのエンジニアブログ" />
-      <Nav />
+      <Nav/>
       <Wrapper>
         <Title>Post</Title>
         {posts.length > 0
